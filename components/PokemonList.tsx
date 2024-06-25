@@ -2,7 +2,7 @@ import React from 'react';
 import { PokemonListProps } from '../types/PokemonListProps';
 import { PokemonProps } from '../types/PokemonProps';
 
-const PokemonList = ({ pokemons, setPageNumber }: PokemonListProps) => {
+const PokemonList = ({ pokemons, goToFirst, goToLast, goToPrev, goToNext }: PokemonListProps) => {
   return (
     <table className="table-auto w-1/2 m-auto">
       <thead>

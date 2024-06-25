@@ -2,5 +2,8 @@ import { PokemonProps } from './PokemonProps';
 
 export interface PokemonListProps {
   pokemons: PokemonProps[], 
-  setPageNumber: (pageNumber: number) => void
+  goToNext: () => void
+  goToPrev: () => void
+  goToFirst: () => void
+  goToLast: () => void
 }
