@@ -3,7 +3,7 @@ import React, { ReactNode, useEffect, useState } from 'react';
 import PokemonList from '../components/PokemonList';
 import { DataProps } from '../types/DataProps';
 import './App.css';
-import { PokemonProps, PokemonsProps } from '../types/PokemonProps';
+import { PokemonProps } from '../types/PokemonProps';
 
 const App = (): ReactNode => {
   const [pokemons, setPokemons] = useState<PokemonProps[]>([]);
@@ -18,8 +18,8 @@ const App = (): ReactNode => {
         const { results } = data;
         setPokemons(results);
       });
-  }, []);
-  return <PokemonList pokemons={pokemons} />;
+  }, [pageNumber]);
+  return <PokemonList pokemons={pokemons} setPageNumber={setPageNumber}/>;
 };
 
 export default App;
