@@ -1,10 +1,10 @@
-import axios from 'axios';
-import React, { ReactNode, useEffect, useState } from 'react';
-import PokemonList from '../components/PokemonList';
-import { DataProps } from '../types/DataProps';
 import './App.css';
-import { PokemonProps } from '../types/PokemonProps';
+import axios from 'axios';
 import Loading from '../components/Loading';
+import { DataProps } from '../types/DataProps';
+import PokemonList from '../components/PokemonList';
+import { PokemonProps } from '../types/PokemonProps';
+import React, { ReactNode, useEffect, useState } from 'react';
 
 const App = (): ReactNode => {
   const defaultPokemonToDisplay = 5;

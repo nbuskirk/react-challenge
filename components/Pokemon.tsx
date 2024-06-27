@@ -18,6 +18,7 @@ const Pokemon = () => {
 
       const pokemonResponse = await axios
         .get<PokemonDataProps>(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
+        // i cant remember at the moment how to abstract the base url so we dont have to constantly type this out.
         .catch(err => {
           console.error('Error fetching pokemon data:', err);
           // what else could we do here? log to log svc, stop loading, return to home page or error
