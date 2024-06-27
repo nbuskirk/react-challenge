@@ -66,22 +66,30 @@ const Pokemon = () => {
       <Loading /> : 
       <section className='w-1/2 m-auto'>
         <p className='mb-2'>Selected Pokemon: {name}</p>
-        <table className="table-auto m-auto">
-          <thead>
-            <tr className='w-full bg-sky-300'>
-              <th className='py-2 min-h-2 text-left pl-2'>Abilty</th>
-              <th className='py-2 min-h-2 text-left pl-2'>Abilty Effect</th>
-            </tr>
-          </thead>
-          <tbody>
-            {abilities.map((ability, index) => (
-              <tr key={index} className={`text-black py-2 min-h-2 w-full pl-2 ${index % 2 == 0 ? 'bg-slate-100' : ''}`}>
-                <td className='text-left align-middle	p-2 '>{ability.name}</td>
-                <td className='text-left align-middle	p-2 '>{ability.effect}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {abilities.length > 0 ?
+          (
+            <table className="table-auto m-auto">
+              <thead>
+                <tr className='w-full bg-sky-200'>
+                  <th className='py-2 min-h-2 text-left pl-2'>Abilty</th>
+                  <th className='py-2 min-h-2 text-left pl-2'>Abilty Effect</th>
+                </tr>
+              </thead>
+              <tbody>
+                {abilities.map((ability, index) => (
+                  <tr key={index} className={`text-black py-2 min-h-2 w-full pl-2 ${index % 2 == 0 ? 'bg-slate-100' : ''}`}>
+                    <td className='text-left align-middle	p-2 '>{ability.name}</td>
+                    <td className='text-left align-middle	p-2 '>{ability.effect}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <section>
+              <p className='text-bold'>Oops, this pokemon has no abilities to display</p>
+              <p>click the button below to return to previous view</p>
+            </section>
+          )}
         <Link to={'/'} className='flex justify-end text-sky-500'>Back to list view</Link>
       </section>
   );
